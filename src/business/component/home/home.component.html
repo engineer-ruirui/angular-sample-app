@@ -1,1 +1,78 @@
-<p>home works!</p>
+<mat-toolbar color="primary" class="app-toolbar">
+  <span>東海 Picks</span>
+  <span style="flex:auto;"></span>
+  <span style="flex:auto;"></span>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>ログアウト</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="container">
+  <!-- サイドメニュー -->
+  <mat-sidenav mode="side" class="side-menu" opened>
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>ログアウト</span>
+    </button>
+  </mat-sidenav>
+  <!-- メイン コンテンツ -->
+  <mat-sidenav-content>
+    <p>home works!</p>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
