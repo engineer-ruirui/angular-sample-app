@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static('./dist/angular-heroku'));
+app.use(express.static('./dist/angular-sample-app'));
 
 const path = require('path');
 app.get('/*', function(req, res){
