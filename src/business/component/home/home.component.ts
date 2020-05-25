@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { SampleService } from '../../service/sample.service';
+import { SampleQuery } from '../../query/sample.query';
+import { Sample } from 'src/business/store/sample.model';
+import { Observable } from 'rxjs';
+
 
 export interface PeriodicElement {
   name: string;
@@ -28,12 +33,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sampleService: SampleService,
+    private sampleQuery: SampleQuery
+  ) { }
+
+  public sample$: Observable<Sample[]>;
 
   ngOnInit(): void {
+    this.sampleService.sampleGet();
+    this.sample$ = this.sampleQuery.selectAll();
   }
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-
 }

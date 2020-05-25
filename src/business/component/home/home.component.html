@@ -30,7 +30,7 @@
   <mat-sidenav mode="side" class="side-menu" opened>
     <button mat-menu-item>
       <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+      <span>Test</span>
     </button>
     <button mat-menu-item disabled>
       <mat-icon>voicemail</mat-icon>
@@ -41,29 +41,31 @@
       <span>ログアウト</span>
     </button>
   </mat-sidenav>
+  
   <!-- メイン コンテンツ -->
   <mat-sidenav-content>
     <p>home works!</p>
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- Position Column -->
+    <ul>
+      <li *ngFor="let sample of sample$ | async">
+        {{ sample.name }}
+      </li>
+    </ul>
+    <!-- <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="position">
         <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
       </ng-container>
     
-      <!-- Name Column -->
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
       </ng-container>
     
-      <!-- Weight Column -->
       <ng-container matColumnDef="weight">
         <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
       </ng-container>
     
-      <!-- Symbol Column -->
       <ng-container matColumnDef="symbol">
         <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
@@ -71,7 +73,7 @@
     
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+    </mat-table> -->
     
 
   </mat-sidenav-content>
