@@ -9,17 +9,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { SampleComponent } from './component/sample/sample.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'sample',
+    component: SampleComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    SampleComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +37,8 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    FlexLayoutModule
   ]
 })
 export class BusinessModule { }
