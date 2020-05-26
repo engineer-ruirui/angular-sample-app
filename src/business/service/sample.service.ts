@@ -12,7 +12,7 @@ export class SampleService {
   ) {}
 
   sampleGet() {
-    this.http.get<Array<Sample>>('http://localhost:3000/sites')
+    this.http.get<Array<Sample>>('http://localhost:3000/sample')
     .subscribe((sample) => {
       this.sampleStore.set(sample);
     });
