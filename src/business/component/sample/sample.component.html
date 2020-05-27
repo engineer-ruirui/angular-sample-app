@@ -1,11 +1,13 @@
-<header>
-  <div>Logo</div>
-  <div fxFlexOffset="auto">Menu 1</div>
-  <div>Menu 2</div>
-</header>
-<div class="container" fxLayout.="column">
-  <div class="left" fxFlex="0 0 100px">left</div>
-  <div class="center" fxFlex="grow">center</div>
-  <div class="right" fxFlex="0 0 100px">right</div>
+<div class="main" fxLayout="column">
+  <header>
+    <div>Logo</div>
+    <div fxFlexOffset="auto">Menu 1</div>
+    <div>Menu 2</div>
+  </header>
+  <div class="container" fxLayout="row" fxFlex="grow">
+    <div class="left" fxFlex="0 0 100px">left</div>
+    <div class="center" fxFlex="grow">center</div>
+    <div class="right" fxFlex="0 0 100px">right</div>
+  </div>
+  <footer>footer</footer>
 </div>
-<footer>footer</footer>
