@@ -1,9 +1,7 @@
 $itemColors:(
-  item1: red,
-  item2: blue,
-  item3: green,
-  item4: pink,
-  item5: slategray
+  center: red,
+  left: skyblue,
+  right: green
 );
 
 @each $item, $color in $itemColors {
@@ -12,14 +10,6 @@ $itemColors:(
   }
 }
 
-.item {
-    width: 80px;
-    height: 80px;
-  }
-
-.container {
-    width: 300px;
-    height: 300px;
-    color: #fff;
+header, footer {
     background: #eee;
   }
